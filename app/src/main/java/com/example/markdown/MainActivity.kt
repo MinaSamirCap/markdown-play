@@ -59,3 +59,8 @@ class MainActivity : AppCompatActivity() {
         toast?.show()
     }
 }
+
+
+// reference
+// https://github.com/noties/Markwon
+// https://noties.io/Markwon/#supported-markdown-features
