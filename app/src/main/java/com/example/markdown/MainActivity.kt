@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textview.MaterialTextView
 import io.noties.markwon.Markwon
+import io.noties.markwon.html.HtmlPlugin
 import io.noties.markwon.linkify.LinkifyPlugin
 
 
@@ -21,7 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         //markwon = Markwon.create(this)
 
-        markwon = Markwon.builder(this).usePlugin(LinkifyPlugin.create()).build()
+        markwon = Markwon.builder(this)
+            .usePlugin(LinkifyPlugin.create())
+            .usePlugin(HtmlPlugin.create())
+            .build()
 
         /*markwon = Markwon.builder(this)
             .usePlugin(object : AbstractMarkwonPlugin() {
@@ -48,8 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         val txt =
             "**Hello there!** [Click here to renew your ID](https://www.google.com) https://www.facebook.com"
-
+        val txt2 = "**Mina Samir** Hi Hi <b> KOKY</b>"
+        val spanned = renderHtmlTxt(txt2)
         markwon.setMarkdown(tv, txt)
+        //markwon.setParsedMarkdown(tv, spanned)
     }
 
     @SuppressLint("ShowToast")
