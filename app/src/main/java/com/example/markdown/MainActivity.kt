@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             LinkMovementMethod.getInstance() // to enable select and click on the link at the same time
 
         val txt =
-            "**Hello there!** [Click here to renew your ID](https://www.google.com) https://www.facebook.com"
+            "**Hello there!**  <b> KOKY</b> [Click here to renew your ID](https://www.google.com) https://www.facebook.com"
         val txt2 = "**Mina Samir** Hi Hi <b> KOKY</b>"
         val spanned = renderHtmlTxt(txt2)
         markwon.setMarkdown(tv, txt)
